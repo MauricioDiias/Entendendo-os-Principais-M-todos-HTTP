@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entendendo os Principais Métodos HTTP</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        p {
+            margin-bottom: 20px;
+        }
+        code {
+            background-color: #f0f0f0;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: Consolas, monospace;
+        }
+    </style>
+</head>
+<body>
+    <h1>Entendendo os Principais Métodos HTTP</h1>
+
+    <p>Os métodos HTTP são essenciais para entender como a web funciona, pois definem as ações que podem ser executadas em recursos na internet. Abaixo, explicamos os principais métodos:</p>
+
+    <h2>GET</h2>
+    <p>O método <code>GET</code> é usado para solicitar dados de um recurso específico. Por exemplo:</p>
+    <pre><code>GET /posts/1 HTTP/1.1
+Host: exemplo.com</code></pre>
+    <p>Neste exemplo, estamos solicitando o recurso com ID 1 da coleção de posts.</p>
+
+    <h2>POST</h2>
+    <p>O método <code>POST</code> é utilizado para enviar dados ao servidor para criar um novo recurso. Exemplo:</p>
+    <pre><code>POST /usuarios HTTP/1.1
+Host: exemplo.com
+Content-Type: application/json
+
+{
+    "nome": "João",
+    "email": "joao@example.com"
+}</code></pre>
+    <p>Aqui, estamos criando um novo usuário com nome e email fornecidos.</p>
+
+    <h2>PUT</h2>
+    <p>O método <code>PUT</code> serve para atualizar completamente um recurso. Exemplo:</p>
+    <pre><code>PUT /usuarios/1 HTTP/1.1
+Host: exemplo.com
+Content-Type: application/json
+
+{
+    "nome": "João da Silva",
+    "email": "joao.silva@example.com"
+}</code></pre>
+    <p>Neste caso, estamos atualizando completamente os dados do usuário com ID 1.</p>
+
+    <h2>PATCH</h2>
+    <p>O método <code>PATCH</code> é semelhante ao <code>PUT</code>, mas usado para atualizações parciais. Exemplo:</p>
+    <pre><code>PATCH /usuarios/1 HTTP/1.1
+Host: exemplo.com
+Content-Type: application/json
+
+{
+    "email": "joao.silva.novo@example.com"
+}</code></pre>
+    <p>Aqui, estamos atualizando apenas o email do usuário com ID 1.</p>
+
+    <h2>DELETE</h2>
+    <p>O método <code>DELETE</code> é usado para remover um recurso específico. Exemplo:</p>
+    <pre><code>DELETE /usuarios/1 HTTP/1.1
+Host: exemplo.com</code></pre>
+    <p>Esta requisição remove o usuário com ID 1 do sistema.</p>
+
+    <p>Estes são os principais métodos HTTP usados para interações entre clientes (como navegadores) e servidores na web. Compreender como e quando utilizar cada um é fundamental para desenvolver aplicações eficientes e seguras.</p>
+</body>
+</html>
